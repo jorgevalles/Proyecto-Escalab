@@ -1,0 +1,22 @@
+.carta-link-2 {
+  display: block;
+  line-height: 30px;
+  width: 100px;
+  height: 30px;
+  border: 1px solid rgb(218, 29, 29);
+  text-align: center;
+  margin-top: 80px;
+  text-decoration: none;
+  color: rgb(31, 27, 27);
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgb(216, 14, 14);
+  background: rgba(79, 70, 204, 0.808);
+
+}
+.carta-img{
+    box-shadow: 4px 4px 15px black;
+}
+h2{
+    text-shadow: 2px 2px 3px white;
+}

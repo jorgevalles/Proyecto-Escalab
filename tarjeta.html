@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/mai.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="inputContainer">
+
+      <div class="labelContainer">
+        <label for="mundo" class="label"> Busqueda por pais</label>
+
+        <input
+          type="text"
+          id="filter"
+          class="inputFilter"
+          placeholder="Buscar"
+        />
+      </div>
+
+      <div class="labelContainer">
+        <label for="mundo" class="label"> Busqueda por regiones</label>
+        <select class="regiones" id="mundo" region="select">
+          <option value="Todos" selected>Todos</option>
+          <option value="Asia">Asia</option>
+          <option value="Africa">Africa</option>
+          <option value="Oceania">Oceania</option>
+          <option value="Europe">Europa</option>
+          <option value="America">America</option>
+        </select>
+      </div>
+    </div>
+    <section class="sectionContainer" id="nations"></section>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
