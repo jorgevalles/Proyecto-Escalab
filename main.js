@@ -29,9 +29,16 @@ select?.addEventListener("change", (e) => {
   viewMore();
 });
 
+async function getdata() {
+  const res = await fetch(URL);
+  const data = await res.json();
+  localStorage.setItem("data", JSON.stringify(data));
+}
+getdata();
+
 function getRegion() {
   let arr = [];
-  paises.map((item) => {
+  paises?.map((item) => {
     if (!arr.includes(item.region)) {
       arr.push(item.region);
     }
@@ -40,12 +47,7 @@ function getRegion() {
   console.log(arr);
 }
 getRegion();
-async function getdata() {
-  const res = await fetch(URL);
-  const data = await res.json();
-  localStorage.setItem("data", JSON.stringify(data));
-}
-getdata();
+
 async function viewMore() {
   const section = document.getElementById("nations");
   if (section) {
