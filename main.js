@@ -10,6 +10,9 @@ const paises = JSON.parse(localStorage.getItem("data"));
 
 let data = paises;
 
+const body = document.getElementById("secbody");
+const bodyIndex = document.getElementById("body-index");
+
 imputFilter?.addEventListener("input", (e) => {
   data = paises.filter((item) =>
     item.name.official.toLowerCase().includes(e.target.value.toLowerCase())
@@ -66,13 +69,17 @@ async function viewMore() {
       const articles = document.createElement("section");
       const img = document.createElement("img");
       const ancord = document.createElement("a");
-      ancord.setAttribute("href", "/detalle.html");
+      // ancord.setAttribute("href", "/detalle.html");
       ancord.setAttribute("class", "carta-link");
       const btntext = document.createTextNode("ver mas");
       img.src = country.flags.png;
       ancord.appendChild(btntext);
       ancord.onclick = () =>
-        localStorage.setItem("dataCountry", JSON.stringify(country));
+       { localStorage.setItem("dataCountry", JSON.stringify(country));
+       console.log(body)
+       body.style.display='block';
+       bodyIndex.style.display='none';
+      }
       img.width = 100;
       img.setAttribute("class", "carta-img");
       div3.appendChild(img);
@@ -95,7 +102,6 @@ function viewNations(country) {
     const country = JSON.parse(localStorage.getItem("dataCountry"));
     console.log(country);
     section.innerHTML = "";
-    const body = document.getElementById("body");
     const div = document.createElement("div");
     const div2 = document.createElement("div");
 
@@ -116,17 +122,16 @@ function viewNations(country) {
 
     const articles = document.createElement("section");
     const img = document.createElement("img");
-    const ancord = document.createElement("a");
-    ancord.setAttribute("href", "/detalle.html");
-    const btntext = document.createTextNode("ver mas");
+    const ancord = document.getElementById("button");
     img.src = country.flags.png;
     img.width = 500;
     img.setAttribute("class", "carta-img");
 
-    ancord.appendChild(btntext);
-    ancord.onclick = () => viewNations(country.id);
+    ancord.onclick = () =>{
+      body.style.display='none';
+      bodyIndex.style.display='block';
+    };
 
-    articles.setAttribute("class", "content");
     body.style.backgroundImage = `url(${country.flags.png})`;
     body.style.backgroundRepeat = `no-repeat`;
     body.style.backgroundSize = `100%`;
